@@ -15,8 +15,8 @@ use tokio::net::TcpListener;
 async fn handle_request(req: Request<IncomingBody>) -> Result<Response<Full<Bytes>>, Infallible> {
     match (req.method(), req.uri().path()) {
         (&hyper::Method::GET, "/info") => get_network_info().await,
-        (&hyper::Method::POST, "/halt") => halt().await,
-        (&hyper::Method::POST, "/reboot") => reboot().await,
+        (&hyper::Method::GET, "/halt") => halt().await,
+        (&hyper::Method::GET, "/reboot") => reboot().await,
         _ => Ok(not_found()),
     }
 }
