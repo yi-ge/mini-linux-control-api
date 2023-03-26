@@ -30,7 +30,7 @@ This is a simple Rust-based HTTP server that listens on port 65535 and provides 
 3. Build the project:
 
     ```sh
-    cargo build
+    cargo build --release
     ```
 
 4. Run the server:
